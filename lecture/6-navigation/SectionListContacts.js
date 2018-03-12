@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Row from './Row';
 
 const renderItem = ({ item }) => <Row {...item} />;
-
 const renderSectionHeader = ({ section }) => <Text>{section.title}</Text>;
 
 const SectionListContacts = props => {
@@ -26,6 +25,7 @@ const SectionListContacts = props => {
 
   return (
     <SectionList
+      keyExtractor={item => item.phone}
       sections={sections}
       renderItem={renderItem}
       renderSectionHeader={renderSectionHeader}
