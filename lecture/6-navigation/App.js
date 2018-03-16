@@ -1,39 +1,42 @@
-import React from 'react';
-import { createSwitchNavigator } from 'react-navigation';
+import Example from './examples/0-Switch';
+export default Example;
 
-import AddContactScreen from './screens/AddContactScreen';
-import ContactListScreen from './screens/ContactListScreen';
-import contacts from './contacts';
+// import React from 'react';
+// import { createSwitchNavigator } from 'react-navigation';
 
-const Navigation = createSwitchNavigator(
-  {
-    ContactList: ContactListScreen,
-    AddContact: AddContactScreen,
-  },
-  {
-    initialRouteName: 'ContactList',
-  }
-);
+// import AddContactScreen from './screens/AddContactScreen';
+// import ContactListScreen from './screens/ContactListScreen';
+// import contacts from './contacts';
 
-export default class App extends React.Component {
-  state = {
-    contacts,
-  };
+// const Navigation = createSwitchNavigator(
+//   {
+//     ContactList: ContactListScreen,
+//     AddContact: AddContactScreen,
+//   },
+//   {
+//     initialRouteName: 'ContactList',
+//   }
+// );
 
-  addContact = newContact => {
-    this.setState(prevState => ({
-      contacts: [...prevState.contacts, newContact],
-    }));
-  };
+// export default class App extends React.Component {
+//   state = {
+//     contacts,
+//   };
 
-  render() {
-    return (
-      <Navigation
-        screenProps={{
-          contacts: this.state.contacts,
-          addContact: this.addContact,
-        }}
-      />
-    );
-  }
-}
+//   addContact = newContact => {
+//     this.setState(prevState => ({
+//       contacts: [...prevState.contacts, newContact],
+//     }));
+//   };
+
+//   render() {
+//     return (
+//       <Navigation
+//         screenProps={{
+//           contacts: this.state.contacts,
+//           addContact: this.addContact,
+//         }}
+//       />
+//     );
+//   }
+// }
