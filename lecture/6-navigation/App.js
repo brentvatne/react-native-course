@@ -1,4 +1,5 @@
-import Example from './examples/0-Switch';
+// import Example from './examples/0-Switch';
+import Example from './examples/1-Stack';
 export default Example;
 
 // import React from 'react';
