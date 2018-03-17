@@ -6,6 +6,6 @@
     "prop-types": "^15.6.1",
     "react": "16.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
-    "react-navigation": "2.0.0-alpha.4"
+    "react-navigation": "^2.0.0-alpha.6"
   }
 }
