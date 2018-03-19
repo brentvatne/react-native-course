@@ -2,49 +2,55 @@
 // import Example from './examples/1-Stack';
 // export default Example;
 
-import React from 'react';
-import { StatusBar, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import React from "react";
+import { StatusBar, View } from "react-native";
+import { createStackNavigator, createSwitchNavigator } from "react-navigation";
 
-import AddContactScreen from './screens/AddContactScreen';
-import ContactListScreen from './screens/ContactListScreen';
-import ContactDetailsScreen from './screens/ContactDetailsScreen';
-import contacts from './contacts';
+import AddContactScreen from "./screens/AddContactScreen";
+import ContactListScreen from "./screens/ContactListScreen";
+import ContactDetailsScreen from "./screens/ContactDetailsScreen";
+import LoginScreen from "./screens/LoginScreen";
+import contacts from "./contacts";
 
-const Navigation = createStackNavigator(
+const MainStack = createStackNavigator(
   {
     ContactList: ContactListScreen,
     ContactDetails: ContactDetailsScreen,
-    AddContact: AddContactScreen,
+    AddContact: AddContactScreen
   },
   {
-    initialRouteName: 'ContactList',
+    initialRouteName: "ContactList",
     navigationOptions: {
-      headerTintColor: '#a41034',
+      headerTintColor: "#a41034",
       headerStyle: {
-        backgroundColor: '#fff',
-      },
-    },
+        backgroundColor: "#fff"
+      }
+    }
   }
 );
 
+const AppNavigator = createSwitchNavigator({
+  Login: LoginScreen,
+  Main: MainStack
+});
+
 export default class App extends React.Component {
   state = {
-    contacts,
+    contacts
   };
 
   addContact = newContact => {
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, newContact],
+      contacts: [...prevState.contacts, newContact]
     }));
   };
 
   render() {
     return (
-      <Navigation
+      <AppNavigator
         screenProps={{
           contacts: this.state.contacts,
-          addContact: this.addContact,
+          addContact: this.addContact
         }}
       />
     );
