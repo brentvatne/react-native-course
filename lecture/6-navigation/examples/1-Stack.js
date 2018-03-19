@@ -8,6 +8,10 @@ export default class App extends React.Component {
   }
 }
 
+function getRandomNumber() {
+  return Math.floor(Math.random() * 10);
+}
+
 class ScreenComponentOne extends React.Component {
   static navigationOptions = {
     title: 'First screen',
@@ -37,8 +41,6 @@ class ScreenComponentTwo extends React.Component {
   };
 
   render() {
-    const showGoBack = this.props.navigation.getParam('showGoBack');
-
     return (
       <View
         style={{
@@ -49,22 +51,22 @@ class ScreenComponentTwo extends React.Component {
         }}>
         <Button
           title="Go to three"
-          onPress={() => this.props.navigation.navigate('routeNameThree')}
+          onPress={() =>
+            this.props.navigation.navigate('routeNameThree', {
+              randomNumber: getRandomNumber(),
+            })
+          }
         />
-        {showGoBack ? (
-          <Button
-            title="Go back"
-            onPress={() => this.props.navigation.goBack()}
-          />
-        ) : null}
       </View>
     );
   }
 }
 
 class ScreenComponentThree extends React.Component {
-  static navigationOptions = {
-    title: 'Third and final screen',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: `Number: ${navigation.getParam('randomNumber')}`,
+    };
   };
 
   render() {
@@ -77,11 +79,16 @@ class ScreenComponentThree extends React.Component {
           borderWidth: 25,
           borderColor: 'purple',
         }}>
+        <Text style={{ fontSize: 25 }}>
+          {this.props.navigation.getParam('randomNumber')}
+        </Text>
         <Button
-          title="Go to two and enable back"
-          onPress={() =>
-            this.props.navigation.navigate('routeNameTwo', { showGoBack: true })
-          }
+          title="Get a new random number"
+          onPress={() => {
+            this.props.navigation.setParams({
+              randomNumber: getRandomNumber(),
+            });
+          }}
         />
         <Button
           title="Go back"
