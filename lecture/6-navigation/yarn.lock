@@ -1271,6 +1271,10 @@ deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
+deepmerge@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.1.0.tgz#511a54fff405fc346f0240bb270a3e9533a31102"
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -1859,7 +1863,7 @@ hoek@4.x.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
-hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1:
+hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
 
@@ -3040,6 +3044,15 @@ react-native-maps@0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.19.0.tgz#ce94fad1cf360e335cb4338a68c95f791e869074"
 
+react-native-paper@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-1.2.3.tgz#5632a08dea8eecc1f4e764e3cea260e5ba0f007a"
+  dependencies:
+    color "^2.0.1"
+    create-react-context "^0.2.1"
+    deepmerge "^2.0.1"
+    hoist-non-react-statics "^2.5.0"
+
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.7.0.tgz#38f5ab9368d6ef9e5d18ab64212938af3ec39421"
@@ -3065,7 +3078,7 @@ react-native-tab-view@^0.0.74:
   dependencies:
     prop-types "^15.6.0"
 
-react-native-vector-icons@4.5.0:
+react-native-vector-icons@4.5.0, react-native-vector-icons@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-4.5.0.tgz#6b95619e64f62f05f579f74a01fe5640df95158b"
   dependencies:
@@ -3138,9 +3151,20 @@ react-navigation-deprecated-tab-navigator@1.0.0:
   dependencies:
     react-native-tab-view "^0.0.74"
 
-react-navigation@^2.0.0-alpha.6:
-  version "2.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-2.0.0-alpha.6.tgz#adf77e74d123defd29445bafc8c9c40174f4bea8"
+react-navigation-tabs@^0.1.0-alpha.0:
+  version "0.1.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/react-navigation-tabs/-/react-navigation-tabs-0.1.0-alpha.0.tgz#48a1ba6fb750594696e8214a71d0a97f07cbee28"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    prop-types "^15.6.0"
+    react-lifecycles-compat "^1.0.2"
+    react-native-paper "^1.2.3"
+    react-native-safe-area-view "^0.7.0"
+    react-native-tab-view "^0.0.74"
+
+react-navigation@^2.0.0-alpha.7:
+  version "2.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-2.0.0-alpha.7.tgz#fab097a6437ec4088a1f95ad8277ea12ff3910ed"
   dependencies:
     clamp "^1.0.1"
     create-react-context "^0.2.1"
@@ -3151,6 +3175,7 @@ react-navigation@^2.0.0-alpha.6:
     react-native-drawer-layout-polyfill "^1.3.2"
     react-native-safe-area-view "^0.7.0"
     react-navigation-deprecated-tab-navigator "1.0.0"
+    react-navigation-tabs "^0.1.0-alpha.0"
 
 react-proxy@^1.1.7:
   version "1.1.8"
